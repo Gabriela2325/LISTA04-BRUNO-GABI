@@ -5,13 +5,16 @@ public class Dia {
     private int diaMes;
     private Compromisso[] compromissos;
 
-    /////////////////////////
+    public Dia(int diaMes, Compromisso[] compromissos) {
+        this.diaMes = diaMes;
+        this.compromissos = compromissos;
+    }
 
-    public int getDiames() {
+    public int getdiaMes() {
         return diaMes;
     }
 
-    public void setDiames(int diaMes) {
+    public void setdiaMes(int diaMes) {
         this.diaMes = diaMes;
     }
 
@@ -22,8 +25,6 @@ public class Dia {
     public void setCompromissos(Compromisso[] compromissos) {
         this.compromissos = compromissos;
     }
-
-    ///////////////////////////
 
     public void adicionarCompromisso(Compromisso compromisso) {
 
@@ -40,7 +41,5 @@ public class Dia {
     public String listarCompromissos() {
         return "";
     }
-
-    /////////////////////////
 
 }

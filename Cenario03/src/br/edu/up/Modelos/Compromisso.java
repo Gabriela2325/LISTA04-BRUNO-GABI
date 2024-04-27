@@ -7,7 +7,11 @@ public class Compromisso {
     private String assunto;
     private int hora;
 
-    ////////////////////////////////
+    public Compromisso(String pessoa, String local, String assunto, int hora) {
+        this.pessoa = pessoa;
+        this.local = local;
+        this.assunto = assunto;
+    }
 
     public String getPessoa() {
         return pessoa;
@@ -41,24 +45,9 @@ public class Compromisso {
         this.hora = hora;
     }
 
-    ////////////////////////////////
-
-    public Compromisso(String pessoa, String local, String assunto, int hora) {
-        this.pessoa = pessoa;
-        this.local = local;
-        this.assunto = assunto;
-    }
-
     @Override
     public String toString() {
-        return super.toString();
+        return "Compromisso [pessoa=" + pessoa + ", local=" + local + ", assunto=" + assunto + ", hora=" + hora + "]";
     }
 
-    public String Compromisso(String pessoa, String local, String assunto, int hora) {
-        return "\nPessoa: " + pessoa +
-                "\nAssunto: " + assunto +
-                "\nLocal: " + local +
-                "\nHora: " + hora;
-
-    }
 }
