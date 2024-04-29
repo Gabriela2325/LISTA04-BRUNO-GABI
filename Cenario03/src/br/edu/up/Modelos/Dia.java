@@ -1,5 +1,7 @@
 package br.edu.up.Modelos;
 
+import java.util.Arrays;
+
 public class Dia {
 
     private int diaMes;
@@ -40,6 +42,11 @@ public class Dia {
 
     public String listarCompromissos() {
         return "";
+    }
+
+    @Override
+    public String toString() {
+        return "Dia [diaMes=" + diaMes + ", compromissos=" + Arrays.toString(compromissos) + "]";
     }
 
 }

@@ -37,9 +37,8 @@ public class Ano {
         this.meses = meses;
     }
 
-    public void adicionarMes() {
+    public void adicionarMes(int mes) {
         this.meses = new Mes[12];
-
         Dia[] dias = new Dia[31];
 
         for (int i = 0; i < dias.length; i++) {
