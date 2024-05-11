@@ -4,7 +4,7 @@ public class Evento {
     private String nome;
     private String Local;
     private String Data;
-    private String LotacaoMaxima;
+    private int LotacaoMaxima;
     private int IngressosVendidos;
     private double PrecoIngresso;
 
@@ -32,11 +32,11 @@ public class Evento {
         Data = data;
     }
 
-    public String getLotacaoMaxima() {
+    public int getLotacaoMaxima() {
         return LotacaoMaxima;
     }
 
-    public void setLotacaoMaxima(String lotacaoMaxima) {
+    public void setLotacaoMaxima(int lotacaoMaxima) {
         LotacaoMaxima = lotacaoMaxima;
     }
 
@@ -54,6 +54,12 @@ public class Evento {
 
     public void setPrecoIngresso(double precoIngresso) {
         PrecoIngresso = precoIngresso;
+    }
+
+    @Override
+    public String toString() {
+        return "Evento \nnome=" + nome + "\nLocal=" + Local + "\nData=" + Data + "\nLotacaoMaxima=" + LotacaoMaxima
+                + "\nIngressosVendidos=" + IngressosVendidos + "\nPrecoIngresso=" + PrecoIngresso;
     }
 
 }

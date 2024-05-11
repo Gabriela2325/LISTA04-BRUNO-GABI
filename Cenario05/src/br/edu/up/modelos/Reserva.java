@@ -38,4 +38,10 @@ public class Reserva {
         Data = data;
     }
 
+    @Override
+    public String toString() {
+        return "Reserva\nNomeResponsavel: " + NomeResponsavel + "\nQuantidadePessoas: " + QuantidadePessoas
+                + "\nValorTotal: " + ValorTotal + "\nData: " + Data;
+    }
+
 }
