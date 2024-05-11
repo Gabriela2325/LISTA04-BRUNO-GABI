@@ -3,6 +3,8 @@ package br.edu.up.controles;
 import br.edu.up.modelos.*;
 import br.edu.up.telas.*;
 import br.edu.up.util.Prompt;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 import java.util.Scanner;
 
@@ -11,6 +13,7 @@ public class ControleEvento {
     private static Evento evento = new Evento();
 
     public static void CriarEvento() {
+
         String nome = Prompt.lerLinha("Nome do Evento: ");
         evento.setNome(nome);
 
