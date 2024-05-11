@@ -1,8 +1,7 @@
 // ./ViewContatos.java
-
 package br.edu.up.view;
 
-import br.edu.up.modelo.Icontato;
+import br.edu.up.modelo.Contato;
 import br.edu.up.modelo.ContatoComercial;
 import br.edu.up.modelo.ContatoPessoal;
 import br.edu.up.util.Prompt;
@@ -46,7 +45,7 @@ public class ViewContatos {
         return Prompt.lerInteiro("Digite o código do contato:");
     }
 
-    public void exibirContato(Icontato contato) {
+    public void exibirContato(Contato contato) {
         if (contato != null) {
             Prompt.linhaEmBranco();
             Prompt.imprimir("Detalhes do Contato:");
@@ -57,10 +56,10 @@ public class ViewContatos {
         }
     }
 
-    public void exibirListaContatos(Iterable<Icontato> contatos) {
+    public void exibirListaContatos(Iterable<Contato> contatos) {
         Prompt.linhaEmBranco();
         Prompt.imprimir("Lista de Contatos:");
-        for (Icontato contato : contatos) {
+        for (Contato contato : contatos) {
             Prompt.imprimir(contato.toString());
         }
     }

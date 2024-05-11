@@ -5,44 +5,39 @@ package br.edu.up.modelo;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AgendaTelefonica implements IagendaContatos {
-    private List<Icontato> contatos;
+public class AgendaTelefonica {
+    private List<Contato> contatos;
 
     public AgendaTelefonica() {
         contatos = new ArrayList<>();
     }
 
-    @Override
-    public void adicionarContato(Icontato contato) {
+    public void adicionarContato(Contato contato) {
         contatos.add(contato);
     }
 
-    @Override
-    public Icontato buscarContato(int codigo) {
-        for (Icontato contato : contatos) {
+    public Contato buscarContato(int codigo) {
+        for (Contato contato : contatos) {
             if (contato.getCodigo() == codigo) {
                 return contato;
             }
         }
         return null; 
     }
-
-    @Override
     public void excluirContato(int codigo) {
-        int index = -1;
+        int a = -1;
         for (int i = 0; i < contatos.size(); i++) {
             if (contatos.get(i).getCodigo() == codigo) {
-                index = i;
+                a = i;
                 break;
             }
         }
-        if (index != -1) {
-            contatos.remove(index);
+        if (a != -1) {
+            contatos.remove(a);
         }
     }
 
-    @Override
-    public List<Icontato> listarContatos() {
+    public List<Contato> listarContatos() {
         return contatos;
     }
 }

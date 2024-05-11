@@ -6,18 +6,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Agenda {
-    private List<Icontato> contatos;
+    private List<Contato> contatos;
 
     public Agenda() {
         contatos = new ArrayList<>();
     }
 
-    public void adicionarContato(Icontato contato) {
+    public void adicionarContato(Contato contato) {
         contatos.add(contato);
     }
 
-    public Icontato getContato(int codigo) {
-        for (Icontato contato : contatos) {
+    public Contato buscarContato(int codigo) {
+        for (Contato contato : contatos) {
             if (contato.getCodigo() == codigo) {
                 return contato;
             }
@@ -26,19 +26,19 @@ public class Agenda {
     }
 
     public void excluirContato(int codigo) {
-        int index = -1;
+        int a = -1;
         for (int i = 0; i < contatos.size(); i++) {
             if (contatos.get(i).getCodigo() == codigo) {
-                index = i;
+                a = i;
                 break;
             }
         }
-        if (index != -1) {
-            contatos.remove(index);
+        if (a != -1) {
+            contatos.remove(a);
         }
     }
 
-    public List<Icontato> listarContatos() {
+    public List<Contato> listarContatos() {
         return contatos;
     }
 }

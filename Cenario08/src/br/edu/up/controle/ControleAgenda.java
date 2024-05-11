@@ -2,17 +2,15 @@
 
 package br.edu.up.controle;
 
-import br.edu.up.modelo.IagendaContatos;
-import br.edu.up.modelo.Icontato;
-import br.edu.up.modelo.ContatoComercial;
-import br.edu.up.modelo.ContatoPessoal;
+import br.edu.up.modelo.Agenda;
+import br.edu.up.modelo.Contato;
 import br.edu.up.view.ViewContatos;
 
 public class ControleAgenda {
-    private IagendaContatos agenda;
+    private Agenda agenda;
     private ViewContatos view;
 
-    public ControleAgenda(IagendaContatos agenda, ViewContatos view) {
+    public ControleAgenda(Agenda agenda, ViewContatos view) {
         this.agenda = agenda;
         this.view = view;
     }
@@ -47,18 +45,18 @@ public class ControleAgenda {
     }
 
     private void adicionarContatoPessoal() {
-        ContatoPessoal contatoPessoal = view.lerContatoPessoal();
+        Contato contatoPessoal = view.lerContatoPessoal();
         agenda.adicionarContato(contatoPessoal);
     }
 
     private void adicionarContatoComercial() {
-        ContatoComercial contatoComercial = view.lerContatoComercial();
+        Contato contatoComercial = view.lerContatoComercial();
         agenda.adicionarContato(contatoComercial);
     }
 
     private void excluirContato() {
         int codigo = view.lerCodigoContato();
-        Icontato contato = agenda.buscarContato(codigo);
+        Contato contato = agenda.buscarContato(codigo);
         if (contato != null) {
             agenda.excluirContato(codigo);
             view.contatoExcluido();
@@ -69,7 +67,7 @@ public class ControleAgenda {
 
     private void consultarContato() {
         int codigo = view.lerCodigoContato();
-        Icontato contato = agenda.buscarContato(codigo);
+        Contato contato = agenda.buscarContato(codigo);
         view.exibirContato(contato);
     }
 
