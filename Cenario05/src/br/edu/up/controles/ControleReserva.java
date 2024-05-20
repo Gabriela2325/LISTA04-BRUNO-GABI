@@ -23,8 +23,6 @@ public class ControleReserva {
         String data = Prompt.lerLinha("Data da reserva: ");
         reserva.setData(data);
 
-        // reserva.setValorTotal(unitPassagem * qdtpessoas);
-
     }
 
     public static void AlterarReserva() {

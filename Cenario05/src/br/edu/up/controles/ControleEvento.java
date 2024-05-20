@@ -5,14 +5,16 @@ import br.edu.up.telas.*;
 import br.edu.up.util.Prompt;
 import java.util.ArrayList;
 import java.util.Arrays;
-
 import java.util.Scanner;
 
 public class ControleEvento {
 
-    private static Evento evento = new Evento();
+    private static Evento[] eventos = new Evento[5];
+
 
     public static void CriarEvento() {
+
+        Evento evento = new Evento();
 
         String nome = Prompt.lerLinha("Nome do Evento: ");
         evento.setNome(nome);
@@ -39,7 +41,9 @@ public class ControleEvento {
     }
 
     public static void ListarEventos() {
-        Prompt.imprimir(evento.toString());
+        for (Evento evento : eventos) {
+            Prompt.imprimir(evento.toString());
+        }
     }
 
     public static void ExcluirEvento() {
