@@ -51,7 +51,7 @@ public class ViewControleAcademico {
 
     private void adicionarAluno() {
         String nome = Prompt.lerLinha("Nome do Aluno: "); 
-        Aluno aluno = new Aluno(nome);
+        Aluno aluno = new Aluno(nome, nome, nome, 0, nome, nome);
         Controle.adicionarAluno(aluno);
         Prompt.imprimir("Aluno adicionado com sucesso.");
     }

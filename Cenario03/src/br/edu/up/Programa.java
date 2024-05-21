@@ -1,27 +1,16 @@
 package br.edu.up;
-import br.edu.up.util.*;
-import br.edu.up.Modelos.Ano;
-import br.edu.up.Modelos.Compromisso;
+import br.edu.up.Modelos.*;
 
 public class Programa {
     public static void main(String[] args) throws Exception {
 
+        Ano ano2024 = new Ano(2024, true);
 
+        Compromisso compromisso1 = new Compromisso("João", "Sala de Reuniões", "Reunião de Projeto", 14);
+        
+        ano2024.adicionarCompromisso(compromisso1, 6, 18); 
 
-
-///////////////////////////criar compromisso funcionando///////////////////////////////
-        Compromisso[] compromisso = new Compromisso[24];
-
-        compromisso[10] = new Compromisso("Bruno", "Parque", "Passear", 10);
-        compromisso[12] = new Compromisso("Gabi", "Faculdade", "Passear", 18);
-
-        for (Compromisso compr : compromisso) {
-            if (compr != null) {
-
-                Prompt.separador();
-                Prompt.imprimir(compr.toString());
-                Prompt.separador();
-            }
-        }
+        String compromissosDeJun18 = ano2024.listarCompromissos(6, 18);
+        System.out.println("Compromissos para 18 de Junho: \n" + compromissosDeJun18);
     }
 }

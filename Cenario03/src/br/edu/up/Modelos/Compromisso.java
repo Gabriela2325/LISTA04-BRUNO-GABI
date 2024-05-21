@@ -12,7 +12,6 @@ public class Compromisso {
         this.local = local;
         this.assunto = assunto;
         this.hora = hora;
-
     }
 
     public String getPessoa() {
@@ -47,9 +46,8 @@ public class Compromisso {
         this.hora = hora;
     }
 
-    @Override
     public String toString() {
-        return "Compromisso \nPessoa: " + pessoa + ",\nlocal: " + local + ",\nassunto: " + assunto + ",\nhorário: " + hora;
+        return "Compromisso [pessoa=" + pessoa + ", local=" + local + 
+                ", assunto=" + assunto + ", hora=" + hora + "]";
     }
-
 }

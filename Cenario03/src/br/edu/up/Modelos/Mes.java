@@ -1,59 +1,44 @@
 package br.edu.up.Modelos;
 
 public class Mes {
-
     private int nome;
     private int qtdDias;
     private Dia[] dias;
 
-    public Mes(int nome, int qtdDias, Dia[] dias) {
+    public Mes(int nome, int qtdDias) {
         this.nome = nome;
         this.qtdDias = qtdDias;
-        this.dias = dias;
+        this.dias = new Dia[qtdDias];
+        for (int i = 0; i < qtdDias; i++) {
+            dias[i] = new Dia(i + 1);
+        }
     }
 
-    public int getNome() {
-        return nome;
+    public void adicionarCompromisso(Compromisso comp, int diaMes) {
+        if (diaMes > 0 && diaMes <= qtdDias) {
+            dias[diaMes - 1].adicionarCompromisso(comp);
+        } else {
+            System.out.println("Dia inválido.");
+        }
     }
 
-    public void setNome(int nome) {
-        this.nome = nome;
-    }
-
-    public int getQtdDias() {
-        return qtdDias;
-    }
-
-    public void setQtdDias(int qtdDias) {
-        this.qtdDias = qtdDias;
-    }
-
-    public Dia[] getDias() {
-        return dias;
-    }
-
-    public void setDias(Dia[] dias) {
-        this.dias = dias;
-    }
-
-    public void adicionarCompromisso(Compromisso compromisso, int diaMes) {
-
-    }
-
-    public void adicionarCompromisso(String pessoa, String assunto, int hora, int diaMes) {
-
+    public Compromisso consultarCompromisso(int diaMes, int hora) {
+        if (diaMes > 0 && diaMes <= qtdDias) {
+            return dias[diaMes - 1].consultarCompromisso(hora);
+        }
+        return null;
     }
 
     public void excluirCompromisso(int diaMes, int hora) {
-
+        if (diaMes > 0 && diaMes <= qtdDias) {
+            dias[diaMes - 1].excluirCompromisso(hora);
+        }
     }
 
     public String listarCompromissos(int diaMes) {
-        return "";
+        if (diaMes > 0 && diaMes <= qtdDias) {
+            return dias[diaMes - 1].listarCompromissos();
+        }
+        return "Dia inválido.";
     }
-
-    public String listarCompromissos() {
-        return "";
-    }
-
 }

@@ -7,55 +7,42 @@ public class Ano {
     private boolean bissexto;
     private Mes[] meses;
 
-    public Ano(int ano, boolean bissexto, Mes[] meses) {
+    public Ano(int ano, boolean bissexto) {
         this.ano = ano;
         this.bissexto = bissexto;
-        this.meses = meses;
-    }
-
-    public int getAno() {
-        return ano;
-    }
-
-    public void setAno(int ano) {
-        this.ano = ano;
-    }
-
-    public boolean isBissexto() {
-        return bissexto;
-    }
-
-    public void setBissexto(boolean bissexto) {
-        this.bissexto = bissexto;
-    }
-
-    public Mes[] getMeses() {
-        return meses;
-    }
-
-    public void setMeses(Mes[] meses) {
-        this.meses = meses;
-    }
-
-    public void adicionarMes(int mes) {
         this.meses = new Mes[12];
-        Dia[] dias = new Dia[31];
 
-        for (int i = 0; i < dias.length; i++) {
-
-            dias[i] = new Dia(i + 1);
+        int[] diasPorMes = {31, (bissexto ? 29 : 28), 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+        for (int i = 0; i < 12; i++) {
+            meses[i] = new Mes(i + 1, diasPorMes[i]);
         }
-
-        Mes m1 = new Mes(12, 31, dias);
-
-        this.meses[1] = m1;
     }
 
-    public void excluirCompromisso(int mes, int dia, String hora) {
-        // Lógica para excluir um compromisso em um determinado dia do mês
+    public void adicionarCompromisso(Compromisso comp, int mes, int diaMes) {
+        if (mes > 0 && mes <= 12) {
+            meses[mes - 1].adicionarCompromisso(comp, diaMes);
+        } else {
+            System.out.println("Mês inválido.");
+        }
     }
 
-    public void listarCompromissos(int mes, int dia) {
-        // Lógica para listar os compromissos de um determinado dia do mês
+    public Compromisso consultarCompromisso(int mes, int diaMes, int hora) {
+        if (mes > 0 && mes <= 12) {
+            return meses[mes - 1].consultarCompromisso(diaMes, hora);
+        }
+        return null;
+    }
+
+    public void excluirCompromisso(int mes, int diaMes, int hora) {
+        if (mes > 0 && mes <= 12) {
+            meses[mes - 1].excluirCompromisso(diaMes, hora);
+        }
+    }
+
+    public String listarCompromissos(int mes, int diaMes) {
+        if (mes > 0 && mes <= 12) {
+            return meses[mes - 1].listarCompromissos(diaMes);
+        }
+        return "Mês inválido.";
     }
 }

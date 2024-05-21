@@ -3,50 +3,37 @@ package br.edu.up.Modelos;
 import java.util.Arrays;
 
 public class Dia {
-
     private int diaMes;
     private Compromisso[] compromissos;
 
-    public Dia(int diaMes, Compromisso[] compromissos) {
+    public Dia(int diaMes) {
         this.diaMes = diaMes;
-        this.compromissos = compromissos;
+        this.compromissos = new Compromisso[24];
     }
 
-    public int getdiaMes() {
-        return diaMes;
+    public void adicionarCompromisso(Compromisso comp) {
+        if (compromissos[comp.getHora()] == null) {
+            compromissos[comp.getHora()] = comp;
+        } else {
+            System.out.println("Já existe um compromisso para esta hora.");
+        }
     }
 
-    public void setdiaMes(int diaMes) {
-        this.diaMes = diaMes;
-    }
-
-    public Compromisso[] getCompromissos() {
-        return compromissos;
-    }
-
-    public void setCompromissos(Compromisso[] compromissos) {
-        this.compromissos = compromissos;
-    }
-
-    public void adicionarCompromisso(Compromisso compromisso) {
-
-    }
-
-    public String consultarCompromisso(int hora) {
-        return "";
-
+    public Compromisso consultarCompromisso(int hora) {
+        return compromissos[hora];
     }
 
     public void excluirCompromisso(int hora) {
+        compromissos[hora] = null;
     }
 
     public String listarCompromissos() {
-        return "";
+        StringBuilder sb = new StringBuilder();
+        for (Compromisso comp : compromissos) {
+            if (comp != null) {
+                sb.append(comp.toString()).append("\n");
+            }
+        }
+        return sb.toString();
     }
-
-    @Override
-    public String toString() {
-        return "Dia [diaMes=" + diaMes + ", compromissos=" + Arrays.toString(compromissos) + "]";
-    }
-
 }
