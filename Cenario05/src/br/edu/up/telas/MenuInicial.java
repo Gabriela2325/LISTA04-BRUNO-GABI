@@ -1,17 +1,14 @@
 package br.edu.up.telas;
 
-import br.edu.up.controles.*;
+import br.edu.up.controles.ControleEvento;
+import br.edu.up.controles.ControleReserva;
 import br.edu.up.util.Prompt;
-import java.util.Scanner;
 
 public class MenuInicial {
 
     public void mostrarMenu() {
-
         int op;
-
         do {
-
             System.out.println("-----------------");
             System.out.println("  MENU INICIAL");
             System.out.println("-----------------");
@@ -24,32 +21,25 @@ public class MenuInicial {
             op = Prompt.lerInteiro("Selecione uma opção: ");
 
             switch (op) {
-                case 1: {
-                    MenuEventos();
+                case 1:
+                    menuEventos();
                     break;
-                }
-                case 2: {
-                    MenuReservas();
+                case 2:
+                    menuReservas();
                     break;
-                }
-                case 3: {
+                case 3:
                     System.out.println("Sessão encerrada.");
                     break;
-                }
-                default: {
+                default:
                     System.out.println("Opção inválida");
                     break;
-                }
             }
-        } while (op != 9);
-
+        } while (op != 3);
     }
 
-    public void MenuReservas() {
+    public void menuReservas() {
         int op;
-
         do {
-
             System.out.println("-----------------");
             System.out.println("  MENU RESERVAS");
             System.out.println("-----------------");
@@ -60,48 +50,35 @@ public class MenuInicial {
             System.out.println("3. Listar reserva");
             System.out.println("4. Excluir reserva");
             System.out.println("5. Voltar ao menu inicial");
-            System.out.println("9. Encerrar sessão");
 
             op = Prompt.lerInteiro("Selecione uma opção: ");
 
             switch (op) {
-                case 1: {
-                    ControleReserva.IncluirReserva();
+                case 1:
+                    ControleReserva.incluirReserva();
                     break;
-                }
-                case 2: {
-                    ControleReserva.AlterarReserva();
+                case 2:
+                    ControleReserva.alterarReserva();
                     break;
-                }
-                case 3: {
-                    ControleReserva.ListarReserva();
+                case 3:
+                    ControleReserva.listarReservas();
                     break;
-                }
-                case 4: {
-                    ControleReserva.ExcluirReserva();
+                case 4:
+                    ControleReserva.excluirReserva();
                     break;
-                }
-                case 5: {
+                case 5:
                     mostrarMenu();
                     break;
-                }
-                case 9: {
-                    System.out.println("Sessão encerrada.");
-                    break;
-                }
-                default: {
+                default:
                     System.out.println("Opção inválida");
                     break;
-                }
             }
-        } while (op != 9);
+        } while (op != 5);
     }
 
-    public void MenuEventos() {
+    public void menuEventos() {
         int op;
-
         do {
-
             System.out.println("-----------------");
             System.out.println("  MENU EVENTOS   ");
             System.out.println("-----------------");
@@ -112,41 +89,29 @@ public class MenuInicial {
             System.out.println("3. Listar Evento");
             System.out.println("4. Excluir Evento");
             System.out.println("5. Voltar ao menu inicial");
-            System.out.println("9. Encerrar sessão");
 
             op = Prompt.lerInteiro("Selecione uma opção: ");
 
             switch (op) {
-                case 1: {
-                    ControleEvento.CriarEvento();
+                case 1:
+                    ControleEvento.criarEvento();
                     break;
-                }
-                case 2: {
-                    ControleEvento.AlterarEvento();
+                case 2:
+                    ControleEvento.alterarEvento();
                     break;
-                }
-                case 3: {
-                    ControleEvento.ListarEventos();
+                case 3:
+                    ControleEvento.listarEventos();
                     break;
-                }
-                case 4: {
-                    ControleEvento.ExcluirEvento();
+                case 4:
+                    ControleEvento.excluirEvento();
                     break;
-                }
-                case 5: {
+                case 5:
                     mostrarMenu();
                     break;
-                }
-                case 9: {
-                    System.out.println("Sessão encerrada.");
-                    break;
-                }
-                default: {
+                default:
                     System.out.println("Opção inválida");
                     break;
-                }
             }
-        } while (op != 9);
-
+        } while (op != 5);
     }
 }

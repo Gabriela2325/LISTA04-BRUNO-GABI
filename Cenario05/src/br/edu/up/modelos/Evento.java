@@ -2,11 +2,11 @@ package br.edu.up.modelos;
 
 public class Evento {
     private String nome;
-    private String Local;
-    private String Data;
-    private int LotacaoMaxima;
-    private int IngressosVendidos;
-    private double PrecoIngresso;
+    private String local;
+    private String data;
+    private int lotacaoMaxima;
+    private int ingressosVendidos;
+    private double precoIngresso;
 
     public String getNome() {
         return nome;
@@ -17,49 +17,52 @@ public class Evento {
     }
 
     public String getLocal() {
-        return Local;
+        return local;
     }
 
     public void setLocal(String local) {
-        Local = local;
+        this.local = local;
     }
 
     public String getData() {
-        return Data;
+        return data;
     }
 
     public void setData(String data) {
-        Data = data;
+        this.data = data;
     }
 
     public int getLotacaoMaxima() {
-        return LotacaoMaxima;
+        return lotacaoMaxima;
     }
 
     public void setLotacaoMaxima(int lotacaoMaxima) {
-        LotacaoMaxima = lotacaoMaxima;
+        this.lotacaoMaxima = lotacaoMaxima;
     }
 
     public int getIngressosVendidos() {
-        return IngressosVendidos;
+        return ingressosVendidos;
     }
 
     public void setIngressosVendidos(int ingressosVendidos) {
-        IngressosVendidos = ingressosVendidos;
+        this.ingressosVendidos = ingressosVendidos;
     }
 
     public double getPrecoIngresso() {
-        return PrecoIngresso;
+        return precoIngresso;
     }
 
     public void setPrecoIngresso(double precoIngresso) {
-        PrecoIngresso = precoIngresso;
+        this.precoIngresso = precoIngresso;
+    }
+
+    public int getIngressosDisponiveis() {
+        return lotacaoMaxima - ingressosVendidos;
     }
 
     @Override
     public String toString() {
-        return "Evento \nnome=" + nome + "\nLocal=" + Local + "\nData=" + Data + "\nLotacaoMaxima=" + LotacaoMaxima
-                + "\nIngressosVendidos=" + IngressosVendidos + "\nPrecoIngresso=" + PrecoIngresso;
+        return "Evento \nNome=" + nome + "\nLocal=" + local + "\nData=" + data + "\nLotacaoMaxima=" + lotacaoMaxima
+                + "\nIngressosVendidos=" + ingressosVendidos + "\nPrecoIngresso=" + precoIngresso;
     }
-
 }

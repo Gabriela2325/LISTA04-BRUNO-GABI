@@ -1,47 +1,46 @@
 package br.edu.up.modelos;
 
 public class Reserva {
-    private String NomeResponsavel;
-    private int QuantidadePessoas;
-    private double ValorTotal;
-    private String Data;
+    private String nomeResponsavel;
+    private int quantidadePessoas;
+    private double valorTotal;
+    private String data;
 
     public String getNomeResponsavel() {
-        return NomeResponsavel;
+        return nomeResponsavel;
     }
 
     public void setNomeResponsavel(String nomeResponsavel) {
-        NomeResponsavel = nomeResponsavel;
+        this.nomeResponsavel = nomeResponsavel;
     }
 
     public int getQuantidadePessoas() {
-        return QuantidadePessoas;
+        return quantidadePessoas;
     }
 
     public void setQuantidadePessoas(int quantidadePessoas) {
-        QuantidadePessoas = quantidadePessoas;
+        this.quantidadePessoas = quantidadePessoas;
     }
 
     public double getValorTotal() {
-        return ValorTotal;
+        return valorTotal;
     }
 
     public void setValorTotal(double valorTotal) {
-        ValorTotal = valorTotal;
+        this.valorTotal = valorTotal;
     }
 
     public String getData() {
-        return Data;
+        return data;
     }
 
     public void setData(String data) {
-        Data = data;
+        this.data = data;
     }
 
     @Override
     public String toString() {
-        return "Reserva\nNomeResponsavel: " + NomeResponsavel + "\nQuantidadePessoas: " + QuantidadePessoas
-                + "\nValorTotal: " + ValorTotal + "\nData: " + Data;
+        return "Reserva\nNomeResponsavel: " + nomeResponsavel + "\nQuantidadePessoas: " + quantidadePessoas
+                + "\nValorTotal: " + valorTotal + "\nData: " + data;
     }
-
 }

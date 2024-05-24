@@ -1,3 +1,4 @@
+package br.edu.up;
 
 import br.edu.up.telas.*;
 import br.edu.up.controles.*;
